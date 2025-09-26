@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jack — Statement</title>
+  <meta name="description" content="I build useful things. This website is a statement of how I work." />
+  <style>
+    :root{
+      --bg:#0a0b0d;--panel:#0f1115;--ink:#e6e6e6;--ink-dim:#a6a7ab;--glow:#7ee787;--accent:#79c0ff;--grid:#1a1d24;--line:#20242c;--ok:#7be8a2;--warn:#ffd966;--err:#ff7a90
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:radial-gradient(80% 50% at 50% -10%,rgba(121,192,255,.08),transparent 60%),
+                  radial-gradient(70% 50% at 15% 120%,rgba(126,231,135,.08),transparent 60%),
+                  var(--bg);color:var(--ink);font:400 16px/1.6 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial}
+    .wrap{max-width:1100px;margin:0 auto;padding:24px}
+    .badge{display:inline-flex;gap:8px;align-items:center;border:1px solid #2a2f3a;border-radius:999px;padding:6px 10px;background:#0d0f14;color:#9aa0aa;letter-spacing:.12em;text-transform:uppercase;font-size:11px}
+    .grid{display:grid;gap:18px}
+    @media(min-width:880px){.grid{grid-template-columns:1.2fr .8fr}}
+    .term{background:linear-gradient(#0b0d11,#0b0d11),linear-gradient(transparent,rgba(255,255,255,.06));
+          border:1px solid #1f2430;border-radius:18px;box-shadow:0 0 0 1px #0c0e13 inset,0 10px 40px rgba(0,0,0,.6)}
+    .term-head{display:flex;gap:8px;align-items:center;padding:10px 12px;border-bottom:1px solid #202533}
+    .dot{width:10px;height:10px;border-radius:50%}
+    .dot.red{background:#ff5f56}.dot.yellow{background:#ffbd2e}.dot.green{background:#27c93f}
+    .term-body{padding:16px 16px 22px; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; color:#d2d5db; min-height:200px}
+    .prompt{color:#6b7280}
+    .blink{display:inline-block;width:8px;height:18px;vertical-align:baseline;background:#d2d5db;animation:blink 1s step-end infinite}
+    @keyframes blink{50%{opacity:0}}
+    .hero{padding:8vh 0 5vh;text-align:center}
+    .h1{font-weight:800;letter-spacing:-.02em;line-height:1.1}
+    .h1 .big{display:block;font-size:48px}
+    .h1 .sub{display:block;margin-top:8px;font-size:28px;color:var(--ink-dim)}
+    @media(min-width:860px){.h1 .big{font-size:78px}.h1 .sub{font-size:36px}}
+    .em{background:linear-gradient(90deg,var(--accent),#7ee787,#b794f6);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:18px 0}
+    .chip{border:1px solid #2a2f3a;background:#0e1116;color:#c9cbd1;border-radius:999px;padding:6px 10px;font-size:13px}
+    .card{border:1px solid #222736;background:#0f1218;border-radius:16px;padding:16px}
+    .list{list-style:none;margin:0;padding:0}
+    .list li{padding:12px;border:1px solid #1f2430;border-radius:12px;background:#0b0f14;margin-top:12px}
+    .muted{color:#9aa0aa;font-size:13px}
+    .k{color:#79c0ff}
+    .v{color:#7ee787}
+    footer{opacity:.85}
+    .center{text-align:center}
+    .grid-bg::before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px;opacity:.2}
+  </style>
+</head>
+<body class="grid-bg">
+  <main class="wrap">
+    <div class="badge">statement // not a portfolio</div>
+    <section class="hero">
+      <h1 class="h1">
+        <span class="big">I build <span class="em">useful</span> things.</span>
+        <span class="sub">Code × hardware × 3D prints — proof over promises.</span>
+      </h1>
+      <div class="chips">
+        <div class="chip">observe</div>
+        <div class="chip">model</div>
+        <div class="chip">build</div>
+        <div class="chip">break</div>
+        <div class="chip">learn</div>
+        <div class="chip">ship</div>
+      </div>
+    </section>
+    <section class="grid" aria-label="process">
+      <div class="term">
+        <div class="term-head"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <span style="margin-left:8px;color:#aab0bb;font-size:12px;letter-spacing:.14em;text-transform:uppercase">process.log</span>
+        </div>
+        <div id="log" class="term-body" role="log" aria-live="polite"></div>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 6px 0">How I work</h3>
+        <p class="muted">Small loops. Real demos. Boring parts done right.</p>
+        <ul class="list">
+          <li><b>Clarity &gt; cleverness.</b> Simple contracts, explicit trade‑offs.</li>
+          <li><b>Small surfaces, sharp edges.</b> Scope until it feels inevitable.</li>
+          <li><b>Friction is a feature.</b> The right kind forces quality; the rest is automated.</li>
+          <li><b>Evidence over adjectives.</b> Videos, logs, and users beat slides.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="grid" style="margin-top:18px" aria-label="dials">
+      <div class="card">
+        <h3 style="margin:0 0 12px 0">Dials I actually turn</h3>
+        <div class="muted">Name the trade‑off → pick the setting.</div>
+        <div style="margin-top:12px">
+          <p><span class="k">speed</span>: <span id="dial-speed" class="v">balanced</span> <span class="muted">(ship today ↔︎ polish for tomorrow)</span></p>
+          <input id="range-speed" type="range" min="0" max="100" value="50"/>
+          <p><span class="k">reliability</span>: <span id="dial-rely" class="v">balanced</span> <span class="muted">(proven stack ↔︎ smart risks)</span></p>
+          <input id="range-rely" type="range" min="0" max="100" value="50"/>
+          <p><span class="k">simplicity</span>: <span id="dial-simp" class="v">balanced</span> <span class="muted">(1 screen ↔︎ expert mode)</span></p>
+          <input id="range-simp" type="range" min="0" max="100" value="50"/>
+        </div>
+        <p class="muted" style="margin-top:8px">Default: sensible middle. Context decides.</p>
+      </div>
+      <div class="term">
+        <div class="term-head"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <span style="margin-left:8px;color:#aab0bb;font-size:12px;letter-spacing:.14em;text-transform:uppercase">proofs.sh</span>
+        </div>
+        <div class="term-body" id="proofs"></div>
+      </div>
+    </section>
+    <section style="margin-top:22px" class="card center">
+      <p>I'm not aiming to be ordinary. I'm aiming to make <span class="em">useful</span> feel extraordinary.</p>
+      <p class="muted">Built as a statement. If you're reading this, it's already working.</p>
+    </section>
+    <footer class="center" style="margin:26px 0 8px 0">
+      <div class="muted">Want to talk? Open an issue on the repo.</div>
+    </footer>
+  </main>
+  <script>
+    const log = document.getElementById('log');
+    const proofs = document.getElementById('proofs');
+    const processFeed = [
+      'sudo apt-get install coffee  ↝  E: package not found',
+      'cd ~/Documents/Important/…  ↝  bash: No such file or directory',
+      'rm -rf /   ↝  (why did you do that?)',
+      'sudo !!   ↝  password for jack: *********',
+      'git push origin master   ↝  fatal: did you mean main?',
+      'ls -la   ↝  so. many. dotfiles.',
+      'vim file.txt   ↝  how do i quit???',
+      'man man   ↝  recursive enlightenment',
+      'chmod +x script.sh   ↝  still says Permission denied',
+      'tar -xvzf something.tar.gz   ↝  where did the files go??',
+      'ping localhost   ↝  connection looking good… to yourself',
+      'ssh user@0.0.0.0   ↝  nope.',
+      'echo $PATH   ↝  3 screens long, none correct',
+      'sudo reboot now   ↝  there goes your unsaved work',
+    ];
+    const proofLines = [
+      ['prototype_seen', 'video demo > slides', 'ok'],
+      ['failure_budget', 'break ≥ 3× / week', 'warn'],
+      ['systems_thinking', 'APIs + atoms', 'ok'],
+      ['shipping_rate', 'small releases, often', 'ok']
+    ];
+    let i = 0;
+    function appendLine(text){
+      const row = document.createElement('div');
+      const ps = document.createElement('span');
+      ps.className='prompt';
+      ps.textContent='$';
+      const span = document.createElement('span');
+      row.appendChild(ps);
+      row.appendChild(document.createTextNode(' '));
+      row.appendChild(span);
+      log.appendChild(row);
+      let j=0; const timer=setInterval(()=>{
+        span.textContent = text.slice(0, ++j);
+        if(j>=text.length){ clearInterval(timer); if(i<processFeed.length){setTimeout(typeNext, 250);} }
+      }, 16);
+    }
+    function typeNext(){
+      if(i<processFeed.length){ appendLine(processFeed[i++]); }
+      else{
+        const row = document.createElement('div');
+        row.innerHTML = '<span class="prompt">$</span> <span class="blink"></span>';
+        log.appendChild(row);
+      }
+      log.scrollTop = log.scrollHeight;
+    }
+    typeNext();
+    proofs.innerHTML = proofLines.map(([k,v,level])=>{
+      const color = level==='ok'?'var(--ok)':level==='warn'?'var(--warn)':'var(--err)';
+      return `<div style="margin:6px 0"><span class="prompt">$</span> echo <span style="color:${color}">[${k}]</span> <span>${v}</span></div>`
+    }).join('') + '<div><span class="prompt">$</span> <span class="blink"></span></div>';
+    function label(val){
+      if(val<25) return 'left';
+      if(val>75) return 'right';
+      return 'balanced';
+    }
+    function bindDial(rangeId,labelId){
+      const r=document.getElementById(rangeId);const l=document.getElementById(labelId);
+      const set=()=>{ l.textContent=label(+r.value) };
+      r.addEventListener('input',set); set();
+    }
+    bindDial('range-speed','dial-speed');
+    bindDial('range-rely','dial-rely');
+    bindDial('range-simp','dial-simp');
+  </script>
+</body>
+</html>
