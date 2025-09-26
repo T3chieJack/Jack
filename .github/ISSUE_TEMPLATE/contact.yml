@@ -1,0 +1,17 @@
+name: Contact Jack
+description: Your message will be sent to Jack.
+title: "Contact: <subject>"
+labels: ["contact"]
+body:
+  - type: input
+    id: name
+    attributes: { label: Your name }
+  - type: input
+    id: email
+    attributes: { label: Your email (optional) }
+  - type: textarea
+    id: message
+    attributes:
+      label: Message
+      description: Keep it short and clear.
+    validations: { required: true }
